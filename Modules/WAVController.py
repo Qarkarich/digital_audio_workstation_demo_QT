@@ -4,6 +4,8 @@ from pathlib import Path
 
 
 class WAVController(QWidget):
-    def __init__(self, window):
+    def __init__(self, window, audiofile):
         super().__init__()
-        uic.loadUi(Path('Resources', 'Designs', 'wavmodule_design.ui'), self)
+        uic.loadUi(Path('Resources', 'UI', 'wavmodule_design.ui'), self)
+
+        self.audiofile = audiofile
