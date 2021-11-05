@@ -1,8 +1,9 @@
 import sys
 
 from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog
+from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QLabel
 from PathControl.ModuleController import ModuleController
+from Modules.WAVController import WAVController
 
 
 class MainWindow(QMainWindow):
@@ -15,13 +16,16 @@ class MainWindow(QMainWindow):
             self, 'Выбор файла...', '',
             'WAV-файл (*.wav);;MIDI-файл (*.midi)')
 
-        controller = ModuleController.get_path(fformat)
-        self.horizontalLayout.addWidget(controller(self, fname))
+        self.controller = ModuleController.get_control(fformat)(fname)
+        self.controller.show()
+
+        # на время разработки отдельных модулей главное окно отключаю для удобства
+        # после займусь редиректом в зависимости от типа файла
 
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     # app.setStyleSheet('QMainWindow {background-color: #000000}') TODO: наладь коннект стилей потом!!!!
     ex = MainWindow()
-    ex.show()
+    # ex.show()
     sys.exit(app.exec_())

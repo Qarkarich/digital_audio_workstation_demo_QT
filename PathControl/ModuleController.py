@@ -13,5 +13,7 @@ modules_path = 'Modules'
 
 class ModuleController:
     @staticmethod
-    def get_path(fformat):
+    def get_control(fformat):
         return modules_names[fformat]
+
+
