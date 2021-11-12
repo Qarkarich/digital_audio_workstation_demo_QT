@@ -34,6 +34,9 @@
    </property>
    <item row="0" column="0">
     <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <property name="spacing">
@@ -76,7 +79,17 @@
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
-          <widget class="QDial" name="volumeChanger"/>
+          <widget class="QDial" name="volumeChanger">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="sliderPosition">
+            <number>50</number>
+           </property>
+          </widget>
          </item>
          <item alignment="Qt::AlignHCenter">
           <widget class="QLabel" name="label">
@@ -88,23 +101,16 @@
         </layout>
        </item>
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_3">
-         <item>
-          <widget class="QDial" name="pitchChanger"/>
-         </item>
-         <item alignment="Qt::AlignHCenter">
-          <widget class="QLabel" name="label_2">
-           <property name="text">
-            <string>PITCH</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
         <layout class="QVBoxLayout" name="verticalLayout_4">
          <item>
-          <widget class="QDial" name="speedChanger"/>
+          <widget class="QDial" name="speedChanger">
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="sliderPosition">
+            <number>50</number>
+           </property>
+          </widget>
          </item>
          <item alignment="Qt::AlignHCenter">
           <widget class="QLabel" name="label_3">

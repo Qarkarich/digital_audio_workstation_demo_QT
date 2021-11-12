@@ -6,58 +6,50 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>795</width>
-    <height>600</height>
+    <width>869</width>
+    <height>624</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string/>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>771</width>
-      <height>531</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QListWidget" name="file_manager_widget">
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QWidget" name="widget" native="true">
-       <property name="minimumSize">
-        <size>
-         <width>400</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>8</pointsize>
-        </font>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>795</width>
-     <height>22</height>
-    </rect>
-   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QListWidget" name="file_manager_widget">
+          <property name="minimumSize">
+           <size>
+            <width>300</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>600</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="load_sample_btn">
+          <property name="text">
+           <string>Загрузить</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
   <widget class="QStatusBar" name="DAW_2">
    <property name="font">
@@ -67,6 +59,74 @@
     </font>
    </property>
   </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>869</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionSave"/>
+    <addaction name="actionOpen_file"/>
+   </widget>
+   <widget class="QMenu" name="menuSample">
+    <property name="title">
+     <string>Sample</string>
+    </property>
+    <addaction name="actionCreate_sample"/>
+    <addaction name="actionOpen_sample"/>
+   </widget>
+   <widget class="QMenu" name="menuInfo">
+    <property name="title">
+     <string>Info</string>
+    </property>
+    <addaction name="actionApp_information"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuSample"/>
+   <addaction name="menuInfo"/>
+  </widget>
+  <action name="actionSample">
+   <property name="text">
+    <string>Sample</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save...</string>
+   </property>
+  </action>
+  <action name="actionSave_as">
+   <property name="text">
+    <string>Save as...</string>
+   </property>
+  </action>
+  <action name="actionCreate_sample">
+   <property name="text">
+    <string>Create sample...</string>
+   </property>
+  </action>
+  <action name="actionOpen_file">
+   <property name="text">
+    <string>Open...</string>
+   </property>
+  </action>
+  <action name="actionOpen_sample">
+   <property name="text">
+    <string>Open...</string>
+   </property>
+  </action>
+  <action name="actionApp_information">
+   <property name="text">
+    <string>App information...</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
