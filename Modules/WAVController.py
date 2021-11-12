@@ -1,5 +1,6 @@
 import os
 import atexit
+import shutil
 import wave
 from PyQt5.QtCore import QUrl
 from PyQt5.QtWidgets import QWidget
@@ -18,6 +19,7 @@ class WAVController(QWidget):
         atexit.register(self.clear_data)
         self.permSampleName = 'TestSample.wav'
         self.permSampleFullPath = f"{os.getcwd()}/Modules/{self.permSampleName}"
+        shutil.copy2(file, self.permSampleFullPath[:len(file) - 1] + self.permSampleName)
 
         self.player = QtMultimedia.QMediaPlayer()
         # открытие файла
@@ -96,10 +98,12 @@ class WAVController(QWidget):
         self.player.setMedia(content)
 
     def get_audio(self):
-        return self.permSample
+        return (self.permSampleName, self.permSampleFullPath)
 
     def export_wav_tempor(self, data):
         data.export(self.permSampleFullPath, format='wav')
 
     def clear_data(self):
-        os.remove(self.permSampleFullPath)
+        if Path(self.permSampleFullPath).exists():
+            os.remove(self.permSampleFullPath)
+        del self.player

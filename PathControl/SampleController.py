@@ -3,6 +3,7 @@ import pathlib
 import sqlite3
 import shutil
 
+
 # вынес словарь значений отдельно для возможности замены сторонним файлом, подключением и т.д.
 
 # для теоритического расширения проекта вполне удобно, мне кажется
@@ -28,9 +29,7 @@ class SampleController:
         shutil.copy2(file, self.samples_path)
         with sqlite3.connect(self.table) as con:
             cur = con.cursor()
-            query = """INSERT INTO path(sample_name) VALUES(?)""", (self.samples_path + sample_name,)
-            return cur.execute(query)
-
-
+            cur.execute("""INSERT INTO path(sample_name, sample_path) VALUES(?,?)""", (
+                sample_name, self.samples_path + sample_name,))
 
     # def _open_connection(self):

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string/>
+   <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -20,7 +20,7 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
-         <widget class="QListWidget" name="file_manager_widget">
+         <widget class="QTreeView" name="file_manager_widget">
           <property name="minimumSize">
            <size>
             <width>300</width>
@@ -39,7 +39,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="load_sample_btn">
+         <widget class="QPushButton" name="load_audio_btn">
           <property name="text">
            <string>Загрузить</string>
           </property>
@@ -75,13 +75,6 @@
     <addaction name="actionSave"/>
     <addaction name="actionOpen_file"/>
    </widget>
-   <widget class="QMenu" name="menuSample">
-    <property name="title">
-     <string>Sample</string>
-    </property>
-    <addaction name="actionCreate_sample"/>
-    <addaction name="actionOpen_sample"/>
-   </widget>
    <widget class="QMenu" name="menuInfo">
     <property name="title">
      <string>Info</string>
@@ -89,7 +82,6 @@
     <addaction name="actionApp_information"/>
    </widget>
    <addaction name="menuFile"/>
-   <addaction name="menuSample"/>
    <addaction name="menuInfo"/>
   </widget>
   <action name="actionSample">
